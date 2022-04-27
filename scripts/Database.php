@@ -21,8 +21,8 @@ class Database extends mysqli
         $res = $prev->get_result();
         if ($res === false)
             return null;
-        if ($res->num_rows != 1)
-            throw new mysqli_sql_exception("SQL Injection", -1, $prev);
+//        if ($res->num_rows != 1)
+//            throw new Exception("SQL Injection", -1, $prev);
         return $res;
 
     }

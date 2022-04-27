@@ -31,7 +31,7 @@
                 </select>
                 <button type="submit" name="submit" class="InputButton">Регистрация</button>
                 <?php
-                require_once("AllScripts.php");
+                require_once('scripts/Authorization.php');
                 error_reporting(E_ERROR | E_PARSE);
                 if (isset($_POST["submit"]))
                 {
@@ -47,7 +47,7 @@
                             echo "<div style=\"text-align: center\">"."Пароли не совпадают"."</div>";
                             exit();
                         }
-                        Auth::Register($email, $name, $pass, $group);
+                        Authorization::Register($name, $email, $pass, $group);
                         echo "<div style=\"text-align: center\">"."Регистрация успешна"."</div>";
                         echo "<a class='InputButton' style='text-align: center; text-decoration: none'  href='authorization.php'>Авторизация</a>";
                         //sleep(2);

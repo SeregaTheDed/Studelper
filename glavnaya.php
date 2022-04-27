@@ -1,6 +1,6 @@
 <?php
 if (!isset($_COOKIE['email'])) {
-    header('Location: Autorization.php');
+    header('Location: authorization.php');
     exit();
 }
 ?>

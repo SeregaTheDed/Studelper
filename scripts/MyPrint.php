@@ -1,10 +1,8 @@
 <?php
-class MyPrint
+namespace print;
+function PrintBeutiful($variable)
 {
-    public static function PrintBeutiful($variable)
-    {
-        echo '<pre>';
-        var_dump($variable);
-        echo '</pre>';
-    }
+    echo '<pre>';
+    var_dump($variable);
+    echo '</pre>';
 }

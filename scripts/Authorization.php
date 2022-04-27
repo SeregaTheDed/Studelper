@@ -15,16 +15,9 @@ class Authorization
         $db = new Database();
         $prev = $db->prepare("INSERT INTO users(name, email, hash, group_of_user) VALUE(?, ?, ?, ?)");
         $hash = password_hash($pass, PASSWORD_BCRYPT);
-        $prev->bind_param('sss', $name, $email, $hash, $group);
+        $prev->bind_param('ssss', $name, $email, $hash, $group);
         $prev->execute();
     }
-
-    /**
-     * Попытка авторизовать пользователя
-     * @param string $email
-     * @param string $pass
-     * @return bool
-     */
     public static function Authorization(string $email, string $pass) : bool
     {
         $db = new Database();

@@ -1,21 +1,24 @@
 <?php
-require_once("AllScripts.php");
-error_reporting(E_ERROR | E_PARSE);
-if (isset($_POST["submit_auth"]))
-{
-    $email = $_POST["email"];
-    $pass = $_POST["pass"];
-    //echo "<div style=\"text-align: center\">".$group."</div>";
+if (isset($_COOKIE['email'])) {
+    header("location: glavnaya.php");
+}
+require_once('scripts/Authorization.php');
+if (isset($_POST['submit_auth'])) {
     try {
-        Auth::Authorization($email, $pass);
-        header("location: glavnaya.php");
-        //echo "<a class='InputButton' style='text-align: center; text-decoration: none'  href='glavnaya.php'>На главную!</a>";
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+        $db = new Database();
+        $user = $db->getUserByEmail($email)->fetch_assoc();
+        if (Authorization::Authorization($email, $pass) == true) {
+            header('Location: Glavnaya.php');
+        } else {
+            echo "Неверный пароль";
+        }
 
+    } catch (Exception $e) {
+        echo "Проверьте входные данные";
     }
-    catch (Exception $e)
-    {
-        echo "<div style=\"text-align: center\">".$e->getMessage()."</div>";
-    }
+
 }
 ?>
 <!DOCTYPE html>
@@ -35,18 +38,15 @@ if (isset($_POST["submit_auth"]))
 <div class="intro">
     <img class="img" src="images/logotip.png" width="220" height="120" alt="studelper">
     <div class="RegCont">
-        <form  style="margin-top: 20px" method="post" class="RegistrationForm">
+        <form style="margin-top: 20px" method="post" class="RegistrationForm">
             <h3 style="text-align: center; margin-top: 10px">Авторизация</h3>
-            <input  name="email" type="text" class="InputField" placeholder="e-mail">
-            <input  name="pass" type="text" class="InputField" placeholder="Пароль">
+            <input name="email" type="text" class="InputField" placeholder="e-mail">
+            <input name="pass" type="text" class="InputField" placeholder="Пароль">
             <button type="submit" name="submit_auth" class="InputButton">Войти</button>
 
         </form>
     </div>
 </div>
-
-
-
 
 
 </body>
