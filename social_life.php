@@ -24,7 +24,7 @@ if (isset($_COOKIE["name"]) == false)
                 <a class="nav_link" href="#"><?php echo $_COOKIE['name'] ?></a>
                 <nav class="nav2">
 
-                    <a class="nav_soc" href="#">Социальная жизнь</a>
+                    <a class="nav_soc" href="social_life.php">Социальная жизнь</a>
                     <a class="nav_soc" href="study.html">Учёба</a>
                     <a class="nav_soc" href="kariera.html">Карьера</a>
 
@@ -32,11 +32,7 @@ if (isset($_COOKIE["name"]) == false)
                         <a class="social1" href="social_life.php">События</a>
                         <a class="social1" href="dobavit%20sobitie.html">Добавить событие</a>
                         <a class="social2" href="myChats.html">Мои чаты</a>
-                        <a class="social3" href="interestsChats.html">Чаты по интересам</a>
-
-
-
-
+                        <a class="social3" href="interestsChats.html">Чаты по интересам</a> </nav>
             </div>
 
             <a class="settings" href="#" >
@@ -46,10 +42,6 @@ if (isset($_COOKIE["name"]) == false)
             <a class="STUDHELPER" href="glavnaya.php" >
                 <img style="vertical-align: middle; width:220px; height:120px; " src="images/logotip.png" alt="" />
             </a>
-
-            <a class="zaiavka_nav1" href="zaiavka1.php"><nobr>Подать заявку</nobr></a>
-            <a class="zaiavka_nav2" href="#"><nobr>Подать заявку</nobr></a>
-            <a class="zaiavka_nav3" href="#"><nobr>Подать заявку</nobr></a>
 
         </div>
         <hr class="line">
@@ -71,28 +63,32 @@ if (isset($_COOKIE["name"]) == false)
 
                 <h2 class="intro_title3">г. Ярославль</h2>
                 <h2 class="intro_title4">ЯРГУ</h2>
+                <img class="ivan" src="images/ivan.png" width="100" height="100">
 
-                <a class="btn1_soc" href="#">
-                    <h3 class="itmo">ITMO Energy CUP</h3>
-
-                    <p class="p1">Описание: Реальные кейсы городского уровня, познакомиться с представителями крупных энергокомпаний.
-                        <br>
-                    <p class="p2">Хакатон: 15-16 апреля 2022 г. Приём заявок: до 8 апреля 2022г. <br> Формат: Online</p>
-                </a>
-                <a class="btn2_soc" href="#"></a>
-                <a class="btn3_soc" href="#"></a>
             </div>
+            <div class='main'>
+                <div class='info'>
+                    <div class='info-box'>
+                        <img class='info_image' src='images/man.png'>
+                        <div class='itmo' >ITMO Energy CUP</div>
+                        <div class='description'>Описание: Реальные кейсы городского уровня, познакомиться с представителями крупных энергокомпаний. <br> Хакатон: 15-16 апреля 2022 г.<br>
+                            Приём заявок: до 8 апреля 2022г.<br>  Формат: Online</div>
+                        <button class="zaiavka_btn">Подать заявку</button> </div>
+                    <div class='info-box'>
+                        <img class='info_image' src='images/man.png'>
+                        <div class='itmo' >ITMO Energy CUP</div>
+                        <div class='description'>Описание: Реальные кейсы городского уровня, познакомиться с представителями крупных энергокомпаний. <br> Хакатон: 15-16 апреля 2022 г.<br>
+                            Приём заявок: до 8 апреля 2022г.<br>  Формат: Online</div>
+                        <button class="zaiavka_btn">Подать заявку</button> </div>
+                    <div class='info-box'>
+                        <img class='info_image' src='images/man.png'>
+                        <div class='itmo' >ITMO Energy CUP</div>
+                        <div class='description'>Описание: Реальные кейсы городского уровня, познакомиться с представителями крупных энергокомпаний. <br> Хакатон: 15-16 апреля 2022 г.<br>
+                            Приём заявок: до 8 апреля 2022г.<br>  Формат: Online</div>
+                        <button class="zaiavka_btn">Подать заявку</button> </div>
 
-        </div>
+                </div>
 
 
-        <img class="ivan" src="images/ivan.png" width="100" height="100">
-        <img class="sob" src="images/man.png" width="120" height="120">
-    </div>
-
-</div>
-
-
-</body>
-
+            </div>
 </html>
